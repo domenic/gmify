@@ -18,7 +18,7 @@ specify "Format conversion", (done) =>
         desired = fs.readFileSync(image("1-desired.png"))
         output = fs.readFileSync(image("1-out.png"))
 
-        output.toString().should.equal(desired.toString())
+        output.should.deep.equal(desired)
 
         done()
     )
@@ -32,7 +32,7 @@ specify "Resizing", (done) =>
         desired = fs.readFileSync(image("2-desired.png"))
         output = fs.readFileSync(image("2-out.png"))
 
-        output.toString().should.equal(desired.toString())
+        output.should.deep.equal(desired)
 
         done()
     )
